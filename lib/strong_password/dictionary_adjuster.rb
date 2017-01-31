@@ -974,9 +974,7 @@ module StrongPassword
     end
 
     def is_strong?(min_entropy = 18, min_word_length = 4, extra_dictionary_words = [])
-      adjusted_entropy(min_entropy,
-                       min_word_length,
-                       extra_dictionary_words) >= min_entropy
+      adjusted_entropy(min_word_length, extra_dictionary_words, min_entropy) >= min_entropy
     end
 
     def is_weak?(min_entropy = 18, min_word_length = 4, extra_dictionary_words = [])
